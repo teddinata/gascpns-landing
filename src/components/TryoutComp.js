@@ -55,7 +55,7 @@ const TryoutComp = () => {
                       {tryout.description}
                     </Card.Text>
 
-                    <a href="https://staging.gascpns.com" target="_blank">
+                    <a href="https://staging.gascpns.com">
                       <Button className="btn btn-dark">
                         Beli Soal</Button>
                     </a>
