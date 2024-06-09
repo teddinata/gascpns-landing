@@ -140,10 +140,8 @@ const FooterComp = () => {
                   <h4 className="fw-bold pb-2">Alamat</h4>
                   <ul className="list-unstyled">
                     <li className="mb-2">
-                      <a className="text-decoration-none text-white">
-                        Jl. Bawean no. 119, Gunungsimping, Cilacap Tengah,
+                    Jl. Bawean no. 119, Gunungsimping, Cilacap Tengah,
                         Cilacap, Jawa Tengah
-                      </a>
                     </li>
                   </ul>
                 </div>
