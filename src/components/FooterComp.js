@@ -24,7 +24,7 @@ const FooterComp = () => {
                   />
                 </div>
                 <div className="col-auto">
-                  <a href="https://staging.gascpns.com/login">
+                  <a href="https://app.gascpns.com/login">
                     <button type="submit" className="btn btn-dark text-white">
                       Mulai Sekarang
                     </button>
