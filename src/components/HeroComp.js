@@ -18,8 +18,10 @@ const HeroComp = () => {
             </p>
 
             <div>
-              <a href="https://app.gascpns.com/login">
+              <a href="https://app.gascpns.com/register">
               <Button className="btn btn-light me-3">Register</Button>
+              </a>
+              <a href="https://app.gascpns.com/login">
               <Button className="btn btn-dark">Masuk</Button>
               </a>
               

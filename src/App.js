@@ -8,7 +8,6 @@ import TestimoniComp from "./components/TestimoniComp";
 
 
 
-
 function App() {
   return <div>
     <HeroComp/>

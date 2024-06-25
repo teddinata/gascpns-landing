@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { Link } from 'react-scroll';
 
 const NavbarComp = () => {
   return (
@@ -7,35 +8,64 @@ const NavbarComp = () => {
       <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
           <Navbar.Brand href="" className="fw-bold fs-4">
-          <span style={{color: '#0ba7e3'}} className="">
-            <img className="img-fluid" style={{ width: '150px' }} src="/logo-gascpns-biru.png" alt="Logo" />
-          </span>
+            <span style={{color: '#0ba7e3'}}>
+              <img className="img-fluid" style={{ width: '150px' }} src="/logo-gascpns-biru.png" alt="Logo" />
+            </span>
           </Navbar.Brand>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="https://app.gascpns.com/login" className="mx-2">
-                Beranda
-              </Nav.Link>
-              <Nav.Link href="https://app.gascpns.com/login" className="mx-2">
-                Fitur
-              </Nav.Link>
-              <Nav.Link href="https://app.gascpns.com/login" className="mx-2">
-                Tryout
-              </Nav.Link>
-              <Nav.Link href="https://app.gascpns.com/login" className="mx-2">
-                Testimoni
-              </Nav.Link>
-              <Nav.Link href="https://app.gascpns.com/login" className="mx-2">
-                Dashboard
-              </Nav.Link>
-
+            <Nav className="ms-auto align-items-center">
+              <Nav.Item>
+                <Link
+                  to="hero"
+                  smooth={true}
+                  duration={500}
+                  className="nav-link mx-2"
+                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
+                >
+                  Beranda
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link
+                  to="content"
+                  smooth={true}
+                  duration={500}
+                  className="nav-link mx-2"
+                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
+                >
+                  Fitur
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link
+                  to="tryout"
+                  smooth={true}
+                  duration={500}
+                  className="nav-link mx-2"
+                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
+                >
+                  Tryout
+                </Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Link
+                  to="testimoni"
+                  smooth={true}
+                  duration={500}
+                  className="nav-link mx-2"
+                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
+                >
+                  Testimoni
+                </Link>
+              </Nav.Item>
               <a href='https://app.gascpns.com/login'>
-              <Button className="text-white btn-sm btn-info m-2" style={{ width: "100px", borderRadius: "14px" }}>Masuk</Button>
+                <Button className="text-white btn btn-info mx-2" style={{ width: "150px", borderRadius: "14px" }} >
+                Dashboard
+                </Button>
               </a>
-              
             </Nav>
           </Navbar.Collapse>
         </Container>
