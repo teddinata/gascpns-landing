@@ -10,7 +10,7 @@ const FooterComp = () => {
           <Row className="justify-content-between">
             <Col className="col-lg-5 col-12">
               <h2 className="text-white fw-bold">
-                Dapatkan Info Terupdate bersama IKUT CPNS
+                Dapatkan Info Terupdate bersama GASCPNS
               </h2>
             </Col>
             <Col className="col-lg-6 col-12">
@@ -59,7 +59,7 @@ const FooterComp = () => {
                       dalam pengerjaan ujian dalam tes CPNS
                     </li>
                     <li className="mb-2">&copy; 2024 GASCPNS.</li>
-                    <li className="mb-2">V. 1.0.0</li>
+                    <li className="mb-2">V. 1.5.1</li>
                   </ul>
                 </div>
               </div>
@@ -108,13 +108,10 @@ const FooterComp = () => {
                       </a>
                     </li>
                     <li className="mb-2">
-                      <a href="/" className="text-decoration-none text-white">
-                        Telegram
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a href="/" className="text-decoration-none text-white">
-                        Email
+                      <a href="https://t.me/gascpns2024" 
+                        target="_blank"
+                        className="text-decoration-none text-white">
+                        Telegram GASCPNS
                       </a>
                     </li>
                     <li className="mb-2">
@@ -150,7 +147,17 @@ const FooterComp = () => {
           </Row>
 
           <Row className="text-center text-white p-5">
-            <span>Copyright@2023ikutcpns</span>
+            <div className="col-12">
+              <p>
+                &copy; 2024 GASCPNS. All rights reserved. | Designed by{" "}
+                <a
+                  href="https://www.instagram.com/gascpns/"
+                  className="text-white"
+                >
+                  GASCPNS Indonesia
+                </a>
+              </p>
+            </div>
           </Row>
         </div>
       </div>

@@ -17,7 +17,7 @@ const NavbarComp = () => {
 
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto align-items-center">
-              <Nav.Item>
+              {/* <Nav.Item>
                 <Link
                   to="hero"
                   smooth={true}
@@ -27,7 +27,7 @@ const NavbarComp = () => {
                 >
                   Beranda
                 </Link>
-              </Nav.Item>
+              </Nav.Item> */}
               <Nav.Item>
                 <Link
                   to="content"
@@ -60,6 +60,22 @@ const NavbarComp = () => {
                 >
                   Testimoni
                 </Link>
+              </Nav.Item>
+              {/* nav to blog another page https://blog.gascpns.com */}
+              <Nav.Item>
+                <a href='https://blog.gascpns.com' 
+                  target="_blank"
+                  className="nav-link mx-2" style={{ cursor: 'pointer' }}>
+                  Blog
+                </a>
+              </Nav.Item>
+              {/* join our telegram */}
+              <Nav.Item>
+                <a href='https://t.me/gascpns2024' 
+                  target="_blank"
+                  className="nav-link mx-2" style={{ cursor: 'pointer' }}>
+                  Gabung Grup Telegram
+                </a>
               </Nav.Item>
               <a href='https://app.gascpns.com/login'>
                 <Button className="text-white btn btn-info mx-2" style={{ width: "150px", borderRadius: "14px" }} >
