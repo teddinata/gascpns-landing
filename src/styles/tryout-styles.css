@@ -79,19 +79,20 @@
   max-width: 600px;
   margin: 0 auto;
   animation: fadeInUp 0.8s ease-out;
+  margin-top: -90px;
 }
 
-.empty-icon {
+/* .empty-icon {
   width: 120px;
   height: 120px;
-  margin: 0 auto 32px;
+  margin: 0 auto 12px;
   background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: float 3s ease-in-out infinite;
-}
+} */
 
 .empty-icon svg {
   color: #0066CC;
@@ -102,6 +103,7 @@
   font-weight: 800;
   color: #1a1a1a;
   margin-bottom: 16px;
+  margin-top: 24px;
 }
 
 .empty-description {
