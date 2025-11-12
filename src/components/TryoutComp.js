@@ -43,7 +43,7 @@ const TryoutComp = () => {
       <p className="empty-description">
         Daftar sekarang dan dapatkan akses tryout gratis untuk persiapan ujian CPNS Anda!
       </p>
-      <a href="https://app.gascpns.com" target="_blank" rel="noopener noreferrer">
+      <a href="https://app.gascpns.id" target="_blank" rel="noopener noreferrer">
         <Button className="btn-empty-cta">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
@@ -169,7 +169,7 @@ const TryoutComp = () => {
                     </div>
 
                     {/* CTA Button */}
-                    <a href="https://app.gascpns.com" target="_blank" rel="noopener noreferrer">
+                    <a href="https://app.gascpns.id" target="_blank" rel="noopener noreferrer">
                       <Button className="btn-tryout-cta">
                         Daftar Sekarang
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

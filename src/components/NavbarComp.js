@@ -63,7 +63,7 @@ const NavbarComp = () => {
               </Nav.Item>
               {/* nav to blog another page https://blog.gascpns.com */}
               <Nav.Item>
-                <a href='https://blog.gascpns.com' 
+                <a href='https://berita.gascpns.id' 
                   target="_blank"
                   className="nav-link mx-2" style={{ cursor: 'pointer' }}>
                   Blog
@@ -77,7 +77,7 @@ const NavbarComp = () => {
                   Gabung Grup Telegram
                 </a>
               </Nav.Item>
-              <a href='https://app.gascpns.com/login'>
+              <a href='https://app.gascpns.id/login'>
                 <Button className="text-white btn btn-info mx-2" style={{ width: "150px", borderRadius: "14px" }} >
                 Dashboard
                 </Button>

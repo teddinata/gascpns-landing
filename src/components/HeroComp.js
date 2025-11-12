@@ -73,13 +73,13 @@ const HeroComp = () => {
             </div>
 
             <div className="hero-buttons">
-              <a href="https://app.gascpns.com/register" className="btn-link">
+              <a href="https://app.gascpns.id/register" className="btn-link">
                 <Button className="btn btn-primary btn-hero">
                   Daftar Sekarang
                   
                 </Button>
               </a>
-              <a href="https://app.gascpns.com/login" className="btn-link">
+              <a href="https://app.gascpns.id/login" className="btn-link">
                 <Button className="btn btn-outline-light btn-hero">
                   Masuk
                 </Button>
