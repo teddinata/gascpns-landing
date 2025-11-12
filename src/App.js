@@ -5,6 +5,10 @@ import FooterComp from "./components/FooterComp";
 import ContentComp from "./components/ContentComp";
 import TryoutComp from "./components/TryoutComp";
 import TestimoniComp from "./components/TestimoniComp";
+// import './styles/modern-styles.css';
+import './styles/hero-styles.css';
+import './styles/tryout-styles.css';
+import './styles/testimoni-styles.css';
 
 
 
