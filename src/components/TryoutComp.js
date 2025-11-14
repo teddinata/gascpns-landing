@@ -20,7 +20,7 @@ const TryoutComp = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://api-cpns.creazylab.works/api/v1/tryout/on-sale");
+      const response = await fetch("https://api.gascpns.id/api/v1/tryout/on-sale");
       const data = await response.json();
       setTryouts(data.data.data);
       setLoading(false);
