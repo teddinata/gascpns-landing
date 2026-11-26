@@ -1,165 +1,83 @@
 import React from "react";
-import { Col, Row } from "react-bootstrap";
-// import { Container, Row, Col, Card, Image } from "react-bootstrap";
+import { trackEvent } from "../utils/tracking";
+
+const CONTACTS = [
+  { href: "https://www.instagram.com/gascpns/", label: "Instagram @gascpns" },
+  { href: "https://t.me/gascpns2024", label: "Telegram GASCPNS" },
+  { href: "https://wa.me/6285155095022", label: "WhatsApp admin 1" },
+  { href: "https://wa.me/6285183002434", label: "WhatsApp admin 2" },
+];
+
+const PAGE_LINKS = [
+  { href: "#simulasi-kilat", label: "Simulasi Kilat CAT" },
+  { href: "#kalkulator-skd", label: "Kalkulator SKD" },
+  { href: "#roadmap-2027", label: "Roadmap 2027" },
+  { href: "#tryout", label: "Paket tryout" },
+  { href: "#testimoni", label: "Alumni" },
+];
 
 const FooterComp = () => {
   return (
-    <footer className="ftr py-5 mt-4">
-      <div className="container">
-        <div className="row justify-cotent-center m-0 ms-3">
-          <Row className="justify-content-between">
-            <Col className="col-lg-5 col-12">
-              <h2 className="text-white fw-bold">
-                Dapatkan Info Terupdate bersama GASCPNS
-              </h2>
-            </Col>
-            <Col className="col-lg-6 col-12">
-              <form className="bg-white rounded d-flex justify-content-end p-2">
-                <div className="w-100">
-                  <input
-                    type="text"
-                    className="form-control border-0"
-                    id="search"
-                    placeholder=""
-                  />
-                </div>
-                <div className="col-auto">
-                  <a href="https://app.gascpns.id/login">
-                    <button type="submit" className="btn btn-dark text-white">
-                      Mulai Sekarang
-                    </button>
-                  </a>
-                </div>
-              </form>
-            </Col>
-          </Row>
-
-          <Row
-            className="py-5 justify-content-between"
-            style={{ borderBottom: "2px white solid" }}
+    <footer className="footer">
+      <div className="wrap">
+        <div className="closing">
+          <h2 className="closing-title">
+            Pendaftaran CPNS 2027 belum dibuka. Latihanmu bisa mulai malam ini.
+          </h2>
+          <a
+            href="https://app.gascpns.id/register?utm_source=landing&utm_medium=footer_cta&utm_campaign=cpns2027"
+            className="btn btn-gold btn-lg"
+            onClick={() => trackEvent("tryout_cta_click", { location: "footer_cta" })}
           >
-            <div className="col-md-4 col-sm-12">
-              <div className="row">
-                <div className="col">
-                  <a
-                    className="d-inline-flex align-items-center mb-2 text-body-emphasis text-decoration-none"
-                    href="/"
-                    aria-label="Bootstrap"
-                  >
-                    <img
-                      className="img-fluid"
-                      src="/logo-gascpns-putih.png"
-                      alt="Logo"
-                    />
-                    <span className="fs-5"></span>
-                  </a>
-                  <ul className="list-unstyled small text-white">
-                    <li className="mb-2">
-                      Aplikasi Tryout CPNS terpercaya yang bisa membantu kalian
-                      dalam pengerjaan ujian dalam tes CPNS
-                    </li>
-                    <li className="mb-2">&copy; 2024 GASCPNS.</li>
-                    <li className="mb-2">V. 1.5.1</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-12 col-lg-7 text-white">
-              <div className="row">
-                <div className="col-4">
-                  <h4 className="fw-bold pb-2">Beranda</h4>
-                  <ul className="list-unstyled">
-                    <li className="mb-2">
-                      <a href="/" className="text-decoration-none text-white">
-                        Kebijakan Layanan
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a href="/" className="text-decoration-none text-white">
-                        Career
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a
-                        href="/testimoni"
-                        className="text-decoration-none text-white"
-                      >
-                        Testimoni
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a href="/" className="text-decoration-none text-white">
-                        Daftar Kelas
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-4">
-                  <h4 className="fw-bold pb-2">Kontak</h4>
-                  <ul className="list-unstyled">
-                    <li className="mb-2">
-                      <a
-                        href="https://www.instagram.com/gascpns/"
-                        className="text-decoration-none text-white"
-                      >
-                        Instagram
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a href="https://t.me/gascpns2024" 
-                        target="_blank"
-                        className="text-decoration-none text-white">
-                        Telegram GASCPNS
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a
-                        href="https://wa.me/6285155095022"
-                        className="text-decoration-none text-white"
-                      >
-                        Whatsapp 1
-                      </a>
-                    </li>
-                    <li className="mb-2">
-                      <a
-                        href="https://wa.me/6285183002434"
-                        className="text-decoration-none text-white"
-                      >
-                        Whatsapp 2
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-4">
-                  <h4 className="fw-bold pb-2">Alamat</h4>
-                  <ul className="list-unstyled">
-                    <li className="mb-2">
-                    Jl. Bawean no. 119, Gunungsimping, Cilacap Tengah,
-                        Cilacap, Jawa Tengah
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Row>
-
-          <Row className="text-center text-white p-5">
-            <div className="col-12">
-              <p>
-                &copy; 2024 GASCPNS. All rights reserved. | Designed by{" "}
-                <a
-                  href="https://www.instagram.com/gascpns/"
-                  className="text-white"
-                >
-                  GASCPNS Indonesia
-                </a>
-              </p>
-            </div>
-          </Row>
+            Buat akun gratis
+          </a>
         </div>
+
+        <div className="footer-grid">
+          <div className="footer-brand">
+            <img
+              src="/logo-gascpns-putih-480.png"
+              alt="GASCPNS"
+              width="160"
+              height="46"
+              loading="lazy"
+            />
+            <p>
+              Tryout CAT BKN dan persiapan SKD CPNS 2027: soal TWK, TIU, TKP
+              dengan pembahasan lengkap dan analisis hasil.
+            </p>
+          </div>
+
+          <nav aria-label="Bagian halaman">
+            <h3 className="footer-heading">Di halaman ini</h3>
+            <ul className="footer-links">
+              {PAGE_LINKS.map((l) => (
+                <li key={l.href}>
+                  <a href={l.href}>{l.label}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h3 className="footer-heading">Hubungi kami</h3>
+            <ul className="footer-links">
+              {CONTACTS.map((c) => (
+                <li key={c.href}>
+                  <a href={c.href} target="_blank" rel="noopener noreferrer">
+                    {c.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <address className="footer-address">
+              Jl. Bawean no. 119, Gunungsimping, Cilacap Tengah, Cilacap, Jawa
+              Tengah
+            </address>
+          </div>
+        </div>
+
+        <p className="footer-copy">© {new Date().getFullYear()} GASCPNS Indonesia</p>
       </div>
     </footer>
   );

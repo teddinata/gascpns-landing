@@ -1,92 +1,100 @@
-import React from "react";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
-import { Link } from 'react-scroll';
+import React, { useEffect, useState } from "react";
+import { trackEvent } from "../utils/tracking";
+
+const LINKS = [
+  { href: "#simulasi-kilat", label: "Simulasi Kilat" },
+  { href: "#kalkulator-skd", label: "Kalkulator SKD" },
+  { href: "#roadmap-2027", label: "Roadmap 2027" },
+  { href: "#tryout", label: "Paket Tryout" },
+  { href: "#testimoni", label: "Alumni" },
+];
 
 const NavbarComp = () => {
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
+
   return (
-    <div className="navbar-wrapper">
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
-          <Navbar.Brand href="" className="fw-bold fs-4">
-            <span style={{color: '#0ba7e3'}}>
-              <img className="img-fluid" style={{ width: '150px' }} src="/logo-gascpns-biru.png" alt="Logo" />
-            </span>
-          </Navbar.Brand>
+    <header className="site-header">
+      <a href="#main-content" className="skip-link">
+        Langsung ke konten utama
+      </a>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <div className="wrap nav-bar">
+        <a href="#hero" className="nav-logo" aria-label="GASCPNS, ke atas halaman">
+          <img
+            src="/logo-gascpns-biru-480.png"
+            alt="GASCPNS"
+            width="140"
+            height="40"
+          />
+        </a>
 
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto align-items-center">
-              {/* <Nav.Item>
-                <Link
-                  to="hero"
-                  smooth={true}
-                  duration={500}
-                  className="nav-link mx-2"
-                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
-                >
-                  Beranda
-                </Link>
-              </Nav.Item> */}
-              <Nav.Item>
-                <Link
-                  to="content"
-                  smooth={true}
-                  duration={500}
-                  className="nav-link mx-2"
-                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
-                >
-                  Fitur
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link
-                  to="tryout"
-                  smooth={true}
-                  duration={500}
-                  className="nav-link mx-2"
-                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
-                >
-                  Tryout
-                </Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link
-                  to="testimoni"
-                  smooth={true}
-                  duration={500}
-                  className="nav-link mx-2"
-                  style={{ cursor: 'pointer' }} // Menambahkan cursor pointer
-                >
-                  Testimoni
-                </Link>
-              </Nav.Item>
-              {/* nav to blog another page https://blog.gascpns.com */}
-              <Nav.Item>
-                <a href='https://berita.gascpns.id' 
-                  target="_blank"
-                  className="nav-link mx-2" style={{ cursor: 'pointer' }}>
-                  Blog
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls="nav-menu"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span className="nav-toggle-bars" aria-hidden="true" />
+          {open ? "Tutup" : "Menu"}
+        </button>
+
+        <nav
+          id="nav-menu"
+          className={`nav-menu ${open ? "is-open" : ""}`}
+          aria-label="Navigasi utama"
+        >
+          <ul className="nav-links">
+            {LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} onClick={() => setOpen(false)}>
+                  {link.label}
                 </a>
-              </Nav.Item>
-              {/* join our telegram */}
-              <Nav.Item>
-                <a href='https://t.me/gascpns2024' 
-                  target="_blank"
-                  className="nav-link mx-2" style={{ cursor: 'pointer' }}>
-                  Gabung Grup Telegram
-                </a>
-              </Nav.Item>
-              <a href='https://app.gascpns.id/login'>
-                <Button className="text-white btn btn-info mx-2" style={{ width: "150px", borderRadius: "14px" }} >
-                Dashboard
-                </Button>
+              </li>
+            ))}
+            <li>
+              <a
+                href="https://berita.gascpns.id"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Info ASN
               </a>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+            </li>
+          </ul>
+
+          <div className="nav-actions">
+            <a
+              href="https://app.gascpns.id/login?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027"
+              className="nav-login"
+              onClick={() =>
+                trackEvent("tryout_cta_click", { location: "navbar_dashboard" })
+              }
+            >
+              Masuk
+            </a>
+            <a
+              href="https://app.gascpns.id/register?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027"
+              className="btn btn-gold btn-sm"
+              onClick={() =>
+                trackEvent("tryout_cta_click", { location: "navbar_register" })
+              }
+            >
+              Daftar gratis
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
   );
 };
 

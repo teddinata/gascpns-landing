@@ -1,0 +1,590 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-26T00:39:06.324340+00:00",
+  "title": "Design System: GASCPNS",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Cool Paper",
+        "canonical": "#f5f8fa",
+        "tonalRamp": [
+          "#3d3e3e",
+          "#7a7c7d",
+          "#b8babc",
+          "#d5dbe3",
+          "#e8f4ff",
+          "#f5f8fa",
+          "#fafcfd",
+          "#ffffff"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White Sheet",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#404040",
+          "#808080",
+          "#bfbfbf",
+          "#d5dbe3",
+          "#ececee",
+          "#f5f8fa",
+          "#fafafa",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "#0b0707",
+        "tonalRamp": [
+          "#030202",
+          "#0b0707",
+          "#3d4452",
+          "#545151",
+          "#918f8f",
+          "#c2c1c1",
+          "#d5dbe3",
+          "#e7e6e6"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink Muted",
+        "canonical": "#3d4452",
+        "tonalRamp": [
+          "#0f1114",
+          "#1e2229",
+          "#2e333e",
+          "#3d4452",
+          "#5f6673",
+          "#a8abb1",
+          "#ced0d4",
+          "#ececee"
+        ]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#d5dbe3",
+        "tonalRamp": [
+          "#35373a",
+          "#6b6e72",
+          "#a0a4aa",
+          "#d5dbe3",
+          "#e2e6eb",
+          "#ecf0f3",
+          "#f5f7f9",
+          "#fbfcfd"
+        ],
+        "note": "Literal value in neobrutalism.css, not a custom property."
+      },
+      "cyan": {
+        "role": "secondary",
+        "displayName": "Lembar Cyan",
+        "canonical": "#0ba7e3",
+        "tonalRamp": [
+          "#032a39",
+          "#065472",
+          "#087daa",
+          "#0ba7e3",
+          "#54c1eb",
+          "#91d7f2",
+          "#c2e9f8",
+          "#dcf2fb"
+        ]
+      },
+      "cyan-tint": {
+        "role": "secondary",
+        "displayName": "Cyan Tint",
+        "canonical": "#dcf2fb",
+        "tonalRamp": [
+          "#032a39",
+          "#065472",
+          "#087daa",
+          "#0ba7e3",
+          "#54c1eb",
+          "#91d7f2",
+          "#c2e9f8",
+          "#dcf2fb"
+        ]
+      },
+      "blue": {
+        "role": "primary",
+        "displayName": "Ujian Blue",
+        "canonical": "#0066cc",
+        "tonalRamp": [
+          "#001a33",
+          "#003366",
+          "#00509f",
+          "#0066cc",
+          "#4a90e2",
+          "#8cbae8",
+          "#bfd9f2",
+          "#e8f4ff"
+        ]
+      },
+      "blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Blue",
+        "canonical": "#00509f",
+        "tonalRamp": [
+          "#001a33",
+          "#003366",
+          "#00509f",
+          "#0066cc",
+          "#4a90e2",
+          "#8cbae8",
+          "#bfd9f2",
+          "#e8f4ff"
+        ]
+      },
+      "blue-soft": {
+        "role": "primary",
+        "displayName": "Soft Blue",
+        "canonical": "#4a90e2",
+        "tonalRamp": [
+          "#001a33",
+          "#003366",
+          "#00509f",
+          "#0066cc",
+          "#4a90e2",
+          "#8cbae8",
+          "#bfd9f2",
+          "#e8f4ff"
+        ]
+      },
+      "sky": {
+        "role": "primary",
+        "displayName": "Sky Tint",
+        "canonical": "#e8f4ff",
+        "tonalRamp": [
+          "#001a33",
+          "#003366",
+          "#00509f",
+          "#0066cc",
+          "#4a90e2",
+          "#8cbae8",
+          "#bfd9f2",
+          "#e8f4ff"
+        ]
+      },
+      "gold": {
+        "role": "tertiary",
+        "displayName": "Stabilo Gold",
+        "canonical": "#ffd700",
+        "tonalRamp": [
+          "#403600",
+          "#806c00",
+          "#bfa100",
+          "#ffd700",
+          "#ffe347",
+          "#ffed8c",
+          "#fff4b8",
+          "#fffbe6"
+        ]
+      },
+      "gold-hover": {
+        "role": "tertiary",
+        "displayName": "Gold Hover",
+        "canonical": "#ffe347",
+        "tonalRamp": [
+          "#403600",
+          "#806c00",
+          "#bfa100",
+          "#ffd700",
+          "#ffe347",
+          "#ffed8c",
+          "#fff4b8",
+          "#fffbe6"
+        ]
+      },
+      "gold-tint": {
+        "role": "tertiary",
+        "displayName": "Gold Tint",
+        "canonical": "#fff4b8",
+        "tonalRamp": [
+          "#403600",
+          "#806c00",
+          "#bfa100",
+          "#ffd700",
+          "#ffe347",
+          "#ffed8c",
+          "#fff4b8",
+          "#fffbe6"
+        ]
+      },
+      "navy": {
+        "role": "neutral",
+        "displayName": "Navy Field",
+        "canonical": "#293149",
+        "tonalRamp": [
+          "#0a0c12",
+          "#141824",
+          "#1f2537",
+          "#293149",
+          "#696f80",
+          "#9fa2ad",
+          "#c9d1e4",
+          "#eaeaed"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Slate",
+        "canonical": "#1f2937",
+        "tonalRamp": [
+          "#080a0e",
+          "#10151c",
+          "#171f29",
+          "#1f2937",
+          "#2e3a4d",
+          "#8f949b",
+          "#c7cacd",
+          "#e9eaeb"
+        ]
+      },
+      "on-navy-2": {
+        "role": "neutral",
+        "displayName": "On-Navy Muted",
+        "canonical": "#c9d1e4",
+        "tonalRamp": [
+          "#0a0c12",
+          "#141824",
+          "#293149",
+          "#696f80",
+          "#9fa2ad",
+          "#c9d1e4",
+          "#dfe4ef",
+          "#f4f6fa"
+        ]
+      },
+      "ok": {
+        "role": "status",
+        "displayName": "Pass Green",
+        "canonical": "#1b6e20",
+        "tonalRamp": [
+          "#071c08",
+          "#0e3710",
+          "#145218",
+          "#1b6e20",
+          "#5f9a63",
+          "#98be9b",
+          "#c6dbc7",
+          "#e4f4e5"
+        ]
+      },
+      "ok-tint": {
+        "role": "status",
+        "displayName": "Pass Tint",
+        "canonical": "#e4f4e5",
+        "tonalRamp": [
+          "#071c08",
+          "#0e3710",
+          "#145218",
+          "#1b6e20",
+          "#5f9a63",
+          "#98be9b",
+          "#c6dbc7",
+          "#e4f4e5"
+        ]
+      },
+      "bad": {
+        "role": "status",
+        "displayName": "Fail Red",
+        "canonical": "#b42318",
+        "tonalRamp": [
+          "#2d0906",
+          "#5a120c",
+          "#871a12",
+          "#b42318",
+          "#ca655d",
+          "#dd9c97",
+          "#ecc8c5",
+          "#fdeceb"
+        ]
+      },
+      "bad-tint": {
+        "role": "status",
+        "displayName": "Fail Tint",
+        "canonical": "#fdeceb",
+        "tonalRamp": [
+          "#2d0906",
+          "#5a120c",
+          "#871a12",
+          "#b42318",
+          "#ca655d",
+          "#dd9c97",
+          "#ecc8c5",
+          "#fdeceb"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; wide 112%, max 13ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles and the footer closing line."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Card, phase, tryout, and form titles (1.1 to 1.45rem)."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text; leads 1.1 to 1.2rem in ink-2, 46 to 60ch."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Subtest chips, field labels, meta lines. Sentence case."
+      },
+      "numeric": {
+        "displayName": "Numeric",
+        "purpose": "JetBrains Mono for timers and scores only (.num utility)."
+      }
+    },
+    "shadows": [
+      {
+        "name": "lift-sm",
+        "value": "3px 3px 0 var(--ink)",
+        "purpose": "Buttons and skip link at rest; option rows on hover."
+      },
+      {
+        "name": "lift",
+        "value": "4px 4px 0 var(--ink)",
+        "purpose": "Tryout package cards."
+      },
+      {
+        "name": "lift-lg",
+        "value": "8px 8px 0 var(--ink)",
+        "purpose": "Primary work surfaces: exam card, lead form card."
+      },
+      {
+        "name": "btn-hover",
+        "value": "5px 5px 0 var(--ink)",
+        "purpose": "Button hover, paired with translate(-1px, -1px)."
+      },
+      {
+        "name": "btn-active",
+        "value": "1px 1px 0 var(--ink)",
+        "purpose": "Button active, paired with translate(2px, 2px)."
+      },
+      {
+        "name": "lift-cyan",
+        "value": "4px 4px 0 var(--cyan)",
+        "purpose": "Selected calculator target, mobile mini-total bar, footer buttons on navy."
+      },
+      {
+        "name": "lift-cyan-lg",
+        "value": "8px 8px 0 var(--cyan)",
+        "purpose": "Calculator result card on navy."
+      },
+      {
+        "name": "numbox-current",
+        "value": "inset 0 0 0 3px var(--blue)",
+        "purpose": "Current CAT number box ring."
+      },
+      {
+        "name": "stamp-ring",
+        "value": "inset 0 0 0 5px var(--white), inset 0 0 0 7px var(--blue)",
+        "purpose": "Double ring of the score stamp."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Default easing for press, lift, and meter transitions."
+      },
+      {
+        "name": "press",
+        "value": "160ms",
+        "purpose": "Button transform, shadow, and background transitions."
+      },
+      {
+        "name": "option",
+        "value": "140ms",
+        "purpose": "Option row hover lift."
+      },
+      {
+        "name": "meter",
+        "value": "240ms",
+        "purpose": "Safe-zone meter fill width."
+      },
+      {
+        "name": "timer-bar",
+        "value": "1s linear",
+        "purpose": "Per-second countdown bar."
+      },
+      {
+        "name": "stamp-in",
+        "value": "520ms var(--ease-out)",
+        "purpose": "Score stamp drop: rotate -20deg scale 1.7 to rotate -8deg scale 1. Disabled under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "560px"
+      },
+      {
+        "name": "md",
+        "value": "720px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Gold Button",
+      "kind": "button",
+      "refersTo": "button-gold",
+      "description": "Primary action only (claim free tryout, sign up).",
+      "html": "<button class=\"ds-btn ds-btn-gold\">Klaim tryout gratis</button>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;border:var(--line);border-radius:10px;font-weight:750;font-stretch:104%;font-size:1rem;line-height:1.2;box-shadow:var(--lift-sm);transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out),background-color 160ms ease;cursor:pointer;} .ds-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink);} .ds-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);} .ds-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-btn-gold{background:var(--gold);color:var(--ink);} .ds-btn-gold:hover{background:var(--gold-hover);}"
+    },
+    {
+      "name": "Blue Button",
+      "kind": "button",
+      "refersTo": "button-blue",
+      "description": "In-flow actions inside work surfaces.",
+      "html": "<button class=\"ds-btn ds-btn-blue\">Mulai soal 1</button>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;border:var(--line);border-radius:10px;font-weight:750;font-stretch:104%;font-size:1rem;line-height:1.2;box-shadow:var(--lift-sm);transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out),background-color 160ms ease;cursor:pointer;} .ds-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink);} .ds-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);} .ds-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-btn-blue{background:var(--blue);color:#fff;} .ds-btn-blue:hover{background:var(--blue-deep);}"
+    },
+    {
+      "name": "White Button",
+      "kind": "button",
+      "refersTo": "button-white",
+      "description": "Secondary choice beside a gold button.",
+      "html": "<button class=\"ds-btn ds-btn-white\">Coba 3 soal dulu</button>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:10px 22px;border:var(--line);border-radius:10px;font-weight:750;font-stretch:104%;font-size:1rem;line-height:1.2;box-shadow:var(--lift-sm);transition:transform 160ms var(--ease-out),box-shadow 160ms var(--ease-out),background-color 160ms ease;cursor:pointer;} .ds-btn:hover{transform:translate(-1px,-1px);box-shadow:5px 5px 0 var(--ink);} .ds-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink);} .ds-btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-btn-white{background:#fff;color:var(--ink);} .ds-btn-white:hover{background:var(--sky);}"
+    },
+    {
+      "name": "CAT Number Boxes",
+      "kind": "custom",
+      "refersTo": "numbox",
+      "description": "Signature motif: default, done (blue), current (sky with inset blue ring).",
+      "html": "<div class=\"ds-boxes\"><span class=\"ds-numbox is-done\">1</span><span class=\"ds-numbox is-current\">2</span><span class=\"ds-numbox\">3</span></div>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-boxes{display:flex;gap:8px;} .ds-numbox{display:inline-grid;place-items:center;width:44px;height:44px;border:var(--line);border-radius:8px;background:#fff;font-weight:800;font-variant-numeric:tabular-nums;transition:background-color 200ms ease;} .ds-numbox:hover{background:var(--sky);} .ds-numbox.is-done{background:var(--blue);color:#fff;} .ds-numbox.is-current{background:var(--sky);box-shadow:inset 0 0 0 3px var(--blue);}"
+    },
+    {
+      "name": "Subtest Tags",
+      "kind": "chip",
+      "refersTo": "tag-twk",
+      "description": "Subtest chips tinted per the Subtest Tone Rule.",
+      "html": "<div style=\"display:flex;gap:8px\"><span class=\"ds-tag ds-twk\">TWK</span><span class=\"ds-tag ds-tiu\">TIU</span><span class=\"ds-tag ds-tkp\">TKP</span></div>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-tag{display:inline-flex;align-items:center;padding:3px 10px;border:var(--line);border-radius:6px;font-size:0.85rem;font-weight:700;line-height:1.4;} .ds-twk{background:var(--sky);} .ds-tiu{background:var(--cyan-tint);} .ds-tkp{background:var(--gold-tint);}"
+    },
+    {
+      "name": "Option Row",
+      "kind": "custom",
+      "refersTo": "option",
+      "description": "Quiz answer row with lettered key; lifts on hover.",
+      "html": "<button class=\"ds-option\"><span class=\"ds-key\">A</span><span>Melaporkan sesuai prosedur</span></button>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-option{display:flex;align-items:flex-start;gap:12px;width:100%;min-height:52px;padding:10px 14px 10px 10px;border:var(--line);border-radius:12px;background:#fff;text-align:left;font:inherit;font-size:0.98rem;line-height:1.45;cursor:pointer;transition:transform 140ms var(--ease-out),box-shadow 140ms var(--ease-out),background-color 140ms ease;} .ds-option:hover{background:var(--sky);transform:translate(-1px,-1px);box-shadow:var(--lift-sm);} .ds-option:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-key{display:grid;place-items:center;flex:none;width:32px;height:32px;border:var(--line);border-radius:6px;background:#fff;font-weight:800;}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Lead form input with label.",
+      "html": "<label class=\"ds-field\"><span>Nama</span><input placeholder=\"Nama lengkap\"></label>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-field{display:grid;gap:6px;font-weight:700;} .ds-field input{min-height:50px;padding:10px 14px;border:var(--line);border-radius:10px;background:#fff;font:inherit;font-weight:400;} .ds-field input::placeholder{color:#5f6673;} .ds-field input:focus-visible{outline:3px solid var(--blue);outline-offset:1px;} .ds-field input[aria-invalid=true]{border-color:#b42318;background:#fdeceb;}"
+    },
+    {
+      "name": "Work Card",
+      "kind": "card",
+      "refersTo": "card-work",
+      "description": "Surface holding controls: 22px radius, Lift Large.",
+      "html": "<div class=\"ds-work\"><div class=\"ds-work-head\"><strong>Simulasi Kilat</strong><span class=\"ds-timer\">00:54</span></div><div class=\"ds-work-body\">3 soal. 54 detik per soal.</div></div>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-work{background:#fff;border:var(--line);border-radius:22px;box-shadow:var(--lift-lg);overflow:hidden;max-width:420px;} .ds-work-head{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:var(--line);font-stretch:108%;} .ds-timer{padding:8px 12px;border-radius:8px;background:var(--ink);color:#fff;font-family:'JetBrains Mono',monospace;font-weight:700;} .ds-work-body{padding:24px;font-weight:850;font-size:1.6rem;font-stretch:110%;letter-spacing:-0.03em;}"
+    },
+    {
+      "name": "Static Card",
+      "kind": "card",
+      "refersTo": "card-static",
+      "description": "Flat testimonial card: outline only, no shadow.",
+      "html": "<figure class=\"ds-quote\"><span class=\"ds-sticker\">Lolos Kemenkeu 2024</span><blockquote>Latihan bertimer bikin aku tenang di hari H.</blockquote></figure>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-quote{display:grid;gap:16px;margin:0;padding:22px;border:var(--line);border-radius:14px;background:#fff;max-width:360px;} .ds-quote blockquote{margin:0;} .ds-sticker{justify-self:start;padding:3px 10px;border:var(--line);border-radius:6px;background:#fff;font-weight:800;font-size:0.9rem;transform:rotate(-2deg);}"
+    },
+    {
+      "name": "Navigation Bar",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Sticky white bar with ink bottom rule, sky hover links, gold sign-up.",
+      "html": "<nav class=\"ds-nav\"><strong>GASCPNS</strong><div class=\"ds-links\"><a href=\"#\">Simulasi Kilat</a><a href=\"#\">Kalkulator SKD</a><a class=\"ds-login\" href=\"#\">Masuk</a><a class=\"ds-cta\" href=\"#\">Daftar gratis</a></div></nav>",
+      "css": ":host{--paper:#f5f8fa;--white:#fff;--ink:#0b0707;--ink-2:#3d4452;--cyan:#0ba7e3;--cyan-tint:#dcf2fb;--blue:#0066cc;--blue-deep:#00509f;--sky:#e8f4ff;--gold:#ffd700;--gold-hover:#ffe347;--gold-tint:#fff4b8;--navy:#293149;--on-navy-2:#c9d1e4;--line:2px solid var(--ink);--lift-sm:3px 3px 0 var(--ink);--lift-lg:8px 8px 0 var(--ink);--ease-out:cubic-bezier(0.16,1,0.3,1);font-family:Archivo,system-ui,sans-serif;color:var(--ink);} .ds-nav{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px;padding:0 16px;background:#fff;border-bottom:var(--line);} .ds-links{display:flex;align-items:center;gap:4px;} .ds-links a{display:inline-flex;align-items:center;min-height:44px;padding:0 10px;border-radius:8px;color:inherit;text-decoration:none;font-weight:650;font-size:0.97rem;} .ds-links a:hover{background:var(--sky);} .ds-links a:focus-visible{outline:3px solid var(--blue);outline-offset:3px;} .ds-links .ds-login{text-decoration:underline;text-decoration-thickness:2px;font-weight:700;} .ds-links .ds-cta{margin-left:12px;border:var(--line);border-radius:10px;background:var(--gold);box-shadow:var(--lift-sm);font-weight:750;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Lembar Ujian CAT yang Ramah",
+    "overview": "The whole system is the CAT SKD answer sheet made friendly. Surfaces are cool paper (`paper`) and white sheets, outlined with a 2px ink line, and the recurring motif is the numbered question box: a small bordered square that fills blue when answered. The page behaves like an exam you can actually sit: a timer, numbered boxes, option rows that press in, a score stamp that drops. Neobrutalism is the owner-pinned language, but softened: corners are rounded (8 to 22px), shadows are short (3 to 8px), and the cool paper base replaces stark white so long sessions on a phone do not tire the eye.\n\nDensity is moderate and mobile-first. Bands stack vertically with generous padding, each separated by an ink rule, and every section is a working object (quiz card, calculator, answer-sheet specimen, form) rather than decoration. The visual rejection confirmed by the owner is the old look: stiff, and with colors that tired the eye. The palette stays the brand's own (cyan, blue, gold, navy, ink) and is never extended with new hues.\n\nDepth means \"this can be pressed or lifted\". Static content lies flat on the line; anything containing controls floats on a hard ink offset. Color carries meaning, not decoration: the three SKD subtests own three colors everywhere they appear, gold is rationed, and navy is reserved for two fields.",
+    "keyCharacteristics": [
+      "Cool paper base, white sheets, 2px ink outlines on everything structural.",
+      "Numbered CAT boxes as the signature motif (hero strip, quiz progress, answer-sheet specimen, roadmap phases, social kit pagination).",
+      "Hard offset shadows only on pressables and work surfaces; static cards flat.",
+      "Fixed subtest color coding: TWK blue, TIU cyan, TKP gold.",
+      "Archivo set wide and heavy for headings, Archivo regular for reading, JetBrains Mono only for timers and scores."
+    ],
+    "rules": [
+      {
+        "name": "The Subtest Tone Rule",
+        "body": "TWK is always `blue`, TIU always `cyan`, TKP always `gold`, through the custom properties `--twk`, `--tiu`, `--tkp`. Chips use the matching tint (`sky`, `cyan-tint`, `gold-tint`). The hero strip, quiz chips, calculator sliders, share card, and social kit all obey this.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three-Job Gold Rule",
+        "body": "Gold marks the primary action, highlights one key number, or means TKP. Selected and active states use blue, never gold.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Navy Fields Rule",
+        "body": "Navy is reserved for the calculator band (numbers on dark) and the closing footer. No other band goes dark.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono-for-Numbers Rule",
+        "body": "JetBrains Mono is used only for timers and scores (the `.num` utility). Never for headings, labels, or body copy.",
+        "section": "typography"
+      },
+      {
+        "name": "The Highlighter Rule",
+        "body": "One phrase per heading at most gets the gold stabilo stroke (a gradient band from 58% to 92% of the line), and it must be the number or fact that matters (\"54 detik\").",
+        "section": "typography"
+      },
+      {
+        "name": "The Press-Only Lift Rule",
+        "body": "Hard shadows go on pressables and on work surfaces that contain controls. Static cards stay flat on their 2px line.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Cyan-on-Navy Rule",
+        "body": "On navy, ink shadows disappear, so lifts and focus rings switch to cyan.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** outline every structural surface with the 2px ink line (`--line`).",
+      "**Do** reserve hard ink shadows (`--lift-sm`, `--lift`, `--lift-lg`) for buttons and work surfaces that hold controls; switch them to cyan on navy.",
+      "**Do** color TWK, TIU, TKP with `--twk`, `--tiu`, `--tkp` wherever a subtest appears.",
+      "**Do** use blue (`blue` fill or `sky` with a blue line) for selected, answered, and current states.",
+      "**Do** set timers and scores in JetBrains Mono with tabular figures, and headings in Archivo at 800 to 850 weight and 104 to 112% width.",
+      "**Do** keep tap targets at 44px minimum and honor `prefers-reduced-motion`."
+    ],
+    "donts": [
+      "**Don't** add hues outside the brand palette (cyan, blue, gold, navy, ink) and their defined tints.",
+      "**Don't** use gold for selected states, decorative fills, or more than one highlighted phrase per heading.",
+      "**Don't** put a hard shadow on static, control-free cards.",
+      "**Don't** use navy beyond the calculator band and the footer.",
+      "**Don't** use soft blurred shadows or gradients as surfaces; the only gradient is the highlighter stroke.",
+      "**Don't** add uppercase kicker or eyebrow labels above headings."
+    ]
+  }
+}

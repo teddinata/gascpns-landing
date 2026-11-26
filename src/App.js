@@ -1,31 +1,28 @@
-import React from 'react';
+import React from "react";
 import NavbarComp from "./components/NavbarComp";
 import HeroComp from "./components/HeroComp";
-import FooterComp from "./components/FooterComp";
+import ScoreCalculatorComp from "./components/ScoreCalculatorComp";
 import ContentComp from "./components/ContentComp";
 import TryoutComp from "./components/TryoutComp";
+import RoadmapLeadComp from "./components/RoadmapLeadComp";
 import TestimoniComp from "./components/TestimoniComp";
-// import './styles/modern-styles.css';
-import './styles/hero-styles.css';
-import './styles/tryout-styles.css';
-import './styles/testimoni-styles.css';
-
-
+import FooterComp from "./components/FooterComp";
 
 function App() {
-  return <div>
-    <HeroComp/>
-    
-    <ContentComp/>
-
-    <TryoutComp/>
-
-    <TestimoniComp/>
-
-    <NavbarComp/>
-
-    <FooterComp/>
-  </div>;
+  return (
+    <>
+      <NavbarComp />
+      <main id="main-content" tabIndex={-1}>
+        <HeroComp />
+        <ScoreCalculatorComp />
+        <RoadmapLeadComp />
+        <ContentComp />
+        <TryoutComp />
+        <TestimoniComp />
+      </main>
+      <FooterComp />
+    </>
+  );
 }
 
 export default App;

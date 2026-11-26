@@ -21,3 +21,14 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# impeccable review captures
+/.impeccable/review
+/.impeccable/hook.cache.json
+
+# Built on the server by the deploy pipeline
+/build
+
+# Internal marketing material, kept out of this public repo
+/marketing/
+/MARKETING_TOOLS_CPNS_2027.md

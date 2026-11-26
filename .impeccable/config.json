@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "oversized-h1",
+        "value": "*",
+        "files": [
+          "marketing/kit/kit.html"
+        ],
+        "createdAt": "2026-11-26T00:17:06.121Z",
+        "reason": "agent decided: kit.html renders fixed 1080x1350 social slides exported to PNG, not a web viewport; poster-scale headlines are the format"
+      }
+    ]
+  }
+}
