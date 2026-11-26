@@ -1710,10 +1710,11 @@ button.numbox:hover {
   border-bottom: var(--line);
 }
 
+/* Covers carry text, so show them whole instead of cropping. */
 .tryout-cover img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .tryout-cover-empty {
@@ -1776,17 +1777,6 @@ button.numbox:hover {
 }
 
 @media (min-width: 720px) {
-  .tryout-list.is-single .tryout-card {
-    flex-direction: row;
-  }
-
-  .tryout-list.is-single .tryout-cover {
-    flex: 0 0 42%;
-    aspect-ratio: auto;
-    border-bottom: 0;
-    border-right: var(--line);
-  }
-
   .tryout-list.is-single .tryout-body {
     padding: 28px;
   }
