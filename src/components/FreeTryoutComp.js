@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { trackEvent } from "../utils/tracking";
 import { readSessionHint } from "../utils/sessionHint";
 
-const FEED = "https://api.gascpns.id/api/v1/tryout/on-sale?type=free&per_page=1";
+const FEED = "https://api.gascpns.id/api/v1/tryout/on-sale?type=free&per_page=10";
 const APP = "https://app.gascpns.id";
 const utm = "utm_source=landing&utm_medium=free_hook&utm_campaign=cpns2027";
 
@@ -11,6 +11,7 @@ const hasCover = (src) => Boolean(src) && !/\/storage\/?$/.test(src);
 // The hook only renders while the panel has an open free package, so the page never promises one that is gone.
 const FreeTryoutComp = () => {
   const [pkg, setPkg] = useState(null);
+  const [total, setTotal] = useState(0);
   const [signedIn, setSignedIn] = useState(false);
 
   useEffect(() => {
@@ -19,8 +20,11 @@ const FreeTryoutComp = () => {
     fetch(FEED)
       .then((res) => (res.ok ? res.json() : null))
       .then((data) => {
-        const first = data?.data?.data?.[0];
-        if (active && first) setPkg(first);
+        const list = data?.data?.data || [];
+        if (active && list[0]) {
+          setPkg(list[0]);
+          setTotal(Number(data?.data?.total) || list.length);
+        }
       })
       .catch(() => {});
     return () => {
@@ -44,10 +48,12 @@ const FreeTryoutComp = () => {
             Tanpa kartu, tanpa pembayaran
           </p>
           <h2 id="free-title" className="section-title">
-            Ukur skormu dulu dengan satu tryout SKD lengkap. Gratis.
+            {total > 1
+              ? `${total} tryout SKD lengkap, gratis. Mulai ukur skormu.`
+              : "Ukur skormu dulu dengan satu tryout SKD lengkap. Gratis."}
           </h2>
           <p className="section-lead">
-            {title}: {questions} soal HOTS dalam {minutes} menit, dinilai
+            {total > 1 ? `Mulai dari ${title}. Setiap paket` : `${title}:`} {questions} soal HOTS dalam {minutes} menit, dinilai
             otomatis dengan bobot SKD BKN, lengkap dengan pembahasan setiap soal.
           </p>
           <ul className="free-list">

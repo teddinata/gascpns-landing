@@ -36,3 +36,9 @@ test("renders nothing when no free package is open", async () => {
   await waitFor(() => expect(global.fetch).toHaveBeenCalled());
   expect(container).toBeEmptyDOMElement();
 });
+
+test("names how many free tryouts are open when there are several", async () => {
+  global.fetch = jest.fn(() => Promise.resolve({ ok: true, json: () => Promise.resolve({ data: { data: [free, { ...free, id: 3 }], total: 4 } }) }));
+  render(<FreeTryoutComp />);
+  expect(await screen.findByText("4 tryout SKD lengkap, gratis. Mulai ukur skormu.")).toBeInTheDocument();
+});
