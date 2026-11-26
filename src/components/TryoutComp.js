@@ -29,23 +29,27 @@ const APP = "https://app.gascpns.id";
 const effectivePrice = (p) => Number(p.discount || p.price || 0);
 
 // Bundles come from the same on-sale feed; the block only renders when the panel has published one.
-const BundleCard = ({ b }) => {
+const SINGLES_SHOWN = 6;
+
+const BundleCard = ({ b, featured = false }) => {
   const items = Array.isArray(b.bundle_items) ? b.bundle_items : [];
   const count = b.bundle_items_count || items.length;
   const normal = Number(b.bundle_normal_price || 0);
   const price = effectivePrice(b);
   const saving = Math.max(0, Number(b.bundle_saving || 0));
-  const shown = items.slice(0, 4);
+  const shown = items.slice(0, featured ? 8 : 4);
   const href = `${APP}/member/paket/detail/${encodeURIComponent(b.slug || "")}?utm_source=landing&utm_medium=bundle_card&utm_campaign=cpns2027`;
   return (
-    <li className="tryout-card bundle-card">
+    <li className={`tryout-card bundle-card ${featured ? "bundle-featured" : ""}`}>
+      {hasCover(b.cover_path) && <Cover src={b.cover_path} />}
       <div className="tryout-body">
         <span className="bundle-chip">Bundle · {count} paket</span>
+        {featured && <span className="bundle-best">Paling hemat</span>}
         <h3 className="tryout-name">{b.name}</h3>
         {shown.length > 0 && (
           <ul className="bundle-items">
             {shown.map((it) => (
-              <li key={it.id}>{it.name}</li>
+              <li key={it.id}>{String(it.name || "").replace(/^SKD HOTS 2027\s*/, "")}</li>
             ))}
             {items.length > shown.length && <li className="bundle-more">dan {items.length - shown.length} paket lainnya</li>}
           </ul>
@@ -58,7 +62,7 @@ const BundleCard = ({ b }) => {
         <a
           href={href}
           className="btn btn-gold btn-block"
-          onClick={() => trackEvent("tryout_cta_click", { location: "bundle_card", package_name: b.name })}
+          onClick={() => trackEvent("tryout_cta_click", { location: featured ? "bundle_featured" : "bundle_card", package_name: b.name })}
         >
           Lihat isi bundle
           <span className="visually-hidden">: {b.name}</span>
@@ -121,7 +125,7 @@ const TryoutComp = () => {
 
   useEffect(() => {
     let active = true;
-    fetch("https://api.gascpns.id/api/v1/tryout/on-sale")
+    fetch("https://api.gascpns.id/api/v1/tryout/on-sale?per_page=50")
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         return res.json();
@@ -140,8 +144,12 @@ const TryoutComp = () => {
     };
   }, []);
 
-  const bundles = tryouts.filter((t) => t.is_bundle);
+  // The biggest bundle leads as the featured offer; the rest follow in panel order.
+  const bundles = tryouts
+    .filter((t) => t.is_bundle)
+    .sort((a, b) => (b.bundle_items_count || 0) - (a.bundle_items_count || 0));
   const singles = tryouts.filter((t) => !t.is_bundle);
+  const maxSaving = Math.max(0, ...bundles.map((b) => Number(b.bundle_saving || 0)));
 
   return (
     <section id="tryout" className="band band-paper" aria-labelledby="tryout-title">
@@ -177,18 +185,23 @@ const TryoutComp = () => {
         {status === "ready" && bundles.length > 0 && (
           <div className="bundle-block" aria-labelledby="bundle-title">
             <h3 id="bundle-title" className="bundle-title">Bundle hemat</h3>
-            <p className="bundle-lead">Beberapa paket tryout sekaligus dengan harga lebih ringan daripada membeli satu per satu.</p>
+            <p className="bundle-lead">
+              Beberapa paket tryout sekaligus dengan harga lebih ringan daripada membeli satu per satu
+              {maxSaving > 0 ? `, hemat sampai ${formatRupiah(maxSaving)}.` : "."}
+            </p>
             <ul className="tryout-list">
               {bundles.map((b, i) => (
-                <BundleCard key={b.id || `b${i}`} b={b} />
+                <BundleCard key={b.id || `b${i}`} b={b} featured={i === 0 && bundles.length > 1} />
               ))}
             </ul>
           </div>
         )}
 
         {status === "ready" && singles.length > 0 && (
+          <>
+          {bundles.length > 0 && <h3 className="bundle-title singles-title">Paket satuan</h3>}
           <ul className={`tryout-list ${singles.length === 1 ? "is-single" : ""}`}>
-            {singles.map((t, i) => {
+            {singles.slice(0, SINGLES_SHOWN).map((t, i) => {
               const pct = discountPct(t.price, t.discount);
               return (
                 <li key={t.id || i} className="tryout-card">
@@ -208,7 +221,7 @@ const TryoutComp = () => {
                       )}
                     </p>
                     <a
-                      href="https://app.gascpns.id?utm_source=landing&utm_medium=tryout_card&utm_campaign=cpns2027"
+                      href={t.slug ? `${APP}/member/paket/detail/${encodeURIComponent(t.slug)}?utm_source=landing&utm_medium=tryout_card&utm_campaign=cpns2027` : `${APP}?utm_source=landing&utm_medium=tryout_card&utm_campaign=cpns2027`}
                       className="btn btn-blue btn-block"
                       onClick={() =>
                         trackEvent("tryout_cta_click", {
@@ -225,6 +238,18 @@ const TryoutComp = () => {
               );
             })}
           </ul>
+          {singles.length > SINGLES_SHOWN && (
+            <p className="singles-more">
+              <a
+                href="https://app.gascpns.id/member/my-tryout?utm_source=landing&utm_medium=tryout_more&utm_campaign=cpns2027"
+                className="btn btn-white"
+                onClick={() => trackEvent("tryout_cta_click", { location: "tryout_more" })}
+              >
+                Lihat semua {singles.length} paket di aplikasi
+              </a>
+            </p>
+          )}
+          </>
         )}
       </div>
     </section>

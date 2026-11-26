@@ -33,3 +33,21 @@ test("no bundle block when nothing is published", async () => {
   expect(await screen.findByText("Paket Satuan")).toBeInTheDocument();
   expect(screen.queryByText("Bundle hemat")).not.toBeInTheDocument();
 });
+
+test("the biggest bundle is featured and singles stop at six with a link to the rest", async () => {
+  const singles = Array.from({ length: 8 }, (_, i) => ({ id: i + 1, name: `Paket ${i + 1}`, slug: `paket-${i + 1}`, price: 29000, is_bundle: false }));
+  mockFeed([
+    ...singles,
+    { id: 20, name: "Bundle Kecil", slug: "bundle-kecil", price: 79000, is_bundle: true, bundle_items_count: 4, bundle_normal_price: 116000, bundle_saving: 37000, bundle_items: [] },
+    { id: 21, name: "Bundle Ultimate", slug: "bundle-ultimate", price: 199000, is_bundle: true, bundle_items_count: 15, bundle_normal_price: 406000, bundle_saving: 207000, bundle_items: [] },
+  ]);
+  render(<TryoutComp />);
+  expect(await screen.findByText("Paling hemat")).toBeInTheDocument();
+  const featured = screen.getByText("Paling hemat").closest("li");
+  expect(featured).toHaveTextContent("Bundle Ultimate");
+  expect(screen.getByText(/hemat sampai Rp\s?207\.000/)).toBeInTheDocument();
+  expect(screen.getByText("Paket 6")).toBeInTheDocument();
+  expect(screen.queryByText("Paket 7")).not.toBeInTheDocument();
+  expect(screen.getByRole("link", { name: "Lihat semua 8 paket di aplikasi" })).toBeInTheDocument();
+  expect(screen.getAllByRole("link", { name: /Ambil paket ini/ })[0]).toHaveAttribute("href", expect.stringContaining("/member/paket/detail/paket-1"));
+});

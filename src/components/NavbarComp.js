@@ -3,6 +3,7 @@ import { trackEvent } from "../utils/tracking";
 import { readSessionHint, dashboardUrl } from "../utils/sessionHint";
 
 const LINKS = [
+  { href: "#tryout-gratis", label: "Tryout gratis" },
   { href: "#simulasi-kilat", label: "Simulasi Kilat" },
   { href: "#kalkulator-skd", label: "Kalkulator SKD" },
   { href: "#roadmap-2027", label: "Roadmap 2027" },

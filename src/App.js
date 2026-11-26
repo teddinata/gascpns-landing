@@ -1,6 +1,7 @@
 import React from "react";
 import NavbarComp from "./components/NavbarComp";
 import HeroComp from "./components/HeroComp";
+import FreeTryoutComp from "./components/FreeTryoutComp";
 import ScoreCalculatorComp from "./components/ScoreCalculatorComp";
 import ContentComp from "./components/ContentComp";
 import TryoutComp from "./components/TryoutComp";
@@ -14,6 +15,7 @@ function App() {
       <NavbarComp />
       <main id="main-content" tabIndex={-1}>
         <HeroComp />
+        <FreeTryoutComp />
         <ScoreCalculatorComp />
         <RoadmapLeadComp />
         <ContentComp />
