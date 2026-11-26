@@ -1766,6 +1766,58 @@ button.numbox:hover {
   }
 }
 
+/* Bundles: shown above single packages only when the panel has published one. */
+.bundle-block {
+  margin-bottom: 40px;
+}
+
+.bundle-title {
+  font-size: 1.3rem;
+  line-height: 1.2;
+}
+
+.bundle-lead {
+  margin: 6px 0 20px;
+  max-width: 60ch;
+  color: var(--ink-2);
+}
+
+.bundle-card {
+  background: var(--gold-tint);
+}
+
+.bundle-chip {
+  align-self: flex-start;
+  padding: 3px 10px;
+  border: var(--line);
+  border-radius: 6px;
+  background: var(--white);
+  font-weight: 800;
+  font-size: 0.88rem;
+}
+
+.bundle-items {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-2);
+  font-size: 0.95rem;
+}
+
+.bundle-more {
+  list-style: none;
+  margin-left: -18px;
+  font-weight: 700;
+}
+
+.bundle-saving {
+  margin: -4px 0 0;
+  color: var(--ok);
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
 .tryout-fallback {
   display: grid;
   gap: 24px;

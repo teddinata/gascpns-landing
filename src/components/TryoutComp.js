@@ -25,6 +25,49 @@ const Cover = ({ src }) => {
 
 const hasCover = (src) => Boolean(src) && !/\/storage\/?$/.test(src);
 
+const APP = "https://app.gascpns.id";
+const effectivePrice = (p) => Number(p.discount || p.price || 0);
+
+// Bundles come from the same on-sale feed; the block only renders when the panel has published one.
+const BundleCard = ({ b }) => {
+  const items = Array.isArray(b.bundle_items) ? b.bundle_items : [];
+  const count = b.bundle_items_count || items.length;
+  const normal = Number(b.bundle_normal_price || 0);
+  const price = effectivePrice(b);
+  const saving = Math.max(0, Number(b.bundle_saving || 0));
+  const shown = items.slice(0, 4);
+  const href = `${APP}/member/paket/detail/${encodeURIComponent(b.slug || "")}?utm_source=landing&utm_medium=bundle_card&utm_campaign=cpns2027`;
+  return (
+    <li className="tryout-card bundle-card">
+      <div className="tryout-body">
+        <span className="bundle-chip">Bundle · {count} paket</span>
+        <h3 className="tryout-name">{b.name}</h3>
+        {shown.length > 0 && (
+          <ul className="bundle-items">
+            {shown.map((it) => (
+              <li key={it.id}>{it.name}</li>
+            ))}
+            {items.length > shown.length && <li className="bundle-more">dan {items.length - shown.length} paket lainnya</li>}
+          </ul>
+        )}
+        <p className="tryout-price">
+          {normal > price && <s>{formatRupiah(normal)}</s>}
+          <span>{formatRupiah(price)}</span>
+        </p>
+        {saving > 0 && <p className="bundle-saving">Hemat {formatRupiah(saving)} dibanding beli satuan</p>}
+        <a
+          href={href}
+          className="btn btn-gold btn-block"
+          onClick={() => trackEvent("tryout_cta_click", { location: "bundle_card", package_name: b.name })}
+        >
+          Lihat isi bundle
+          <span className="visually-hidden">: {b.name}</span>
+        </a>
+      </div>
+    </li>
+  );
+};
+
 const EarlyBird = ({ failed }) => (
   <div className="tryout-fallback">
     {failed && (
@@ -97,6 +140,9 @@ const TryoutComp = () => {
     };
   }, []);
 
+  const bundles = tryouts.filter((t) => t.is_bundle);
+  const singles = tryouts.filter((t) => !t.is_bundle);
+
   return (
     <section id="tryout" className="band band-paper" aria-labelledby="tryout-title">
       <div className="wrap">
@@ -128,9 +174,21 @@ const TryoutComp = () => {
 
         {(status === "empty" || status === "error") && <EarlyBird failed={status === "error"} />}
 
-        {status === "ready" && (
-          <ul className={`tryout-list ${tryouts.length === 1 ? "is-single" : ""}`}>
-            {tryouts.map((t, i) => {
+        {status === "ready" && bundles.length > 0 && (
+          <div className="bundle-block" aria-labelledby="bundle-title">
+            <h3 id="bundle-title" className="bundle-title">Bundle hemat</h3>
+            <p className="bundle-lead">Beberapa paket tryout sekaligus dengan harga lebih ringan daripada membeli satu per satu.</p>
+            <ul className="tryout-list">
+              {bundles.map((b, i) => (
+                <BundleCard key={b.id || `b${i}`} b={b} />
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {status === "ready" && singles.length > 0 && (
+          <ul className={`tryout-list ${singles.length === 1 ? "is-single" : ""}`}>
+            {singles.map((t, i) => {
               const pct = discountPct(t.price, t.discount);
               return (
                 <li key={t.id || i} className="tryout-card">
