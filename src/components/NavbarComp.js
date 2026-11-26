@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { trackEvent } from "../utils/tracking";
+import { readSessionHint, dashboardUrl } from "../utils/sessionHint";
 
 const LINKS = [
   { href: "#simulasi-kilat", label: "Simulasi Kilat" },
@@ -11,6 +12,9 @@ const LINKS = [
 
 const NavbarComp = () => {
   const [open, setOpen] = useState(false);
+  const [hint, setHint] = useState(null);
+
+  useEffect(() => setHint(readSessionHint()), []);
 
   useEffect(() => {
     if (!open) return undefined;
@@ -73,24 +77,40 @@ const NavbarComp = () => {
           </ul>
 
           <div className="nav-actions">
-            <a
-              href="https://app.gascpns.id/login?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027"
-              className="nav-login"
-              onClick={() =>
-                trackEvent("tryout_cta_click", { location: "navbar_dashboard" })
-              }
-            >
-              Masuk
-            </a>
-            <a
-              href="https://app.gascpns.id/register?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027"
-              className="btn btn-gold btn-sm"
-              onClick={() =>
-                trackEvent("tryout_cta_click", { location: "navbar_register" })
-              }
-            >
-              Daftar gratis
-            </a>
+            {hint ? (
+              <a
+                href={`${dashboardUrl(hint)}?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027`}
+                className="btn btn-gold btn-sm nav-account"
+                onClick={() => trackEvent("tryout_cta_click", { location: "navbar_account" })}
+              >
+                <span className="nav-account-initial" aria-hidden="true">
+                  {hint.name.charAt(0).toUpperCase()}
+                </span>
+                <span className="nav-account-name">{hint.name}</span>
+                <span className="visually-hidden">, buka dasbor</span>
+              </a>
+            ) : (
+              <>
+                <a
+                  href="https://app.gascpns.id/login?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027"
+                  className="nav-login"
+                  onClick={() =>
+                    trackEvent("tryout_cta_click", { location: "navbar_dashboard" })
+                  }
+                >
+                  Masuk
+                </a>
+                <a
+                  href="https://app.gascpns.id/register?utm_source=landing&utm_medium=navbar&utm_campaign=cpns2027"
+                  className="btn btn-gold btn-sm"
+                  onClick={() =>
+                    trackEvent("tryout_cta_click", { location: "navbar_register" })
+                  }
+                >
+                  Daftar gratis
+                </a>
+              </>
+            )}
           </div>
         </nav>
       </div>
